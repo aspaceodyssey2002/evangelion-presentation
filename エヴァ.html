@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シン・エヴァンゲリオン劇場版の考察</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .slide-container {
+      width: 90vw;
+      height: 80vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    
+    .slide.active {
+      display: block;
+    }
+    
+    /* 修正箇所: SVG画像のアスペクト比を崩さずに中央表示 */
+    .slide svg {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+    
+    .navigation {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    
+    button {
+      padding: 10px 30px;
+      font-size: 18px;
+      background-color: #9370DB;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .counter {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <!-- スライド1: タイトル -->
+    <div class="slide active">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="accent-gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#9370DB" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#9370DB" stop-opacity="0.2" />
+          </linearGradient>
+          <filter id="drop-shadow1" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="15" />
+            <feOffset dx="0" dy="10" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient1)" />
+        <!-- デザイン要素 - EVA初号機カラーをイメージした装飾 -->
+        <path d="M0,0 L1920,0 L1920,200 Q1700,250 1600,220 Q1450,180 1300,250 Q1100,350 900,300 Q700,250 500,350 Q300,450 150,400 Q50,350 0,300 Z" fill="url(#accent-gradient1)" opacity="0.8" />
+        <path d="M1920,1080 L0,1080 L0,880 Q220,830 320,860 Q470,900 620,830 Q820,730 1020,780 Q1220,830 1420,730 Q1620,630 1770,680 Q1870,730 1920,780 Z" fill="#9370DB" opacity="0.2" />
+        <!-- エヴァをイメージした装飾ライン -->
+        <line x1="100" y1="600" x2="1820" y2="600" stroke="#9370DB" stroke-width="3" stroke-opacity="0.3" />
+        <line x1="100" y1="605" x2="1820" y2="605" stroke="#4169E1" stroke-width="2" stroke-opacity="0.3" />
+        <line x1="100" y1="610" x2="1820" y2="610" stroke="#FF6347" stroke-width="3" stroke-opacity="0.3" />
+        <!-- タイトル -->
+        <g filter="url(#drop-shadow1)">
+          <text x="960" y="400" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="#333">シン・エヴァンゲリオン劇場版</text>
+          <text x="960" y="500" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#333">の考察</text>
+        </g>
+        <!-- サブタイトル -->
+        <text x="960" y="620" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" fill="#555">ANALYSIS OF EVANGELION NEW THEATRICAL EDITION</text>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="960" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#555">作成日: 2025年3月12日</text>
+      </svg>
+    </div>
+
+    <!-- スライド2: 概要/サマリー -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="accent-gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4169E1" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#4169E1" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="drop-shadow2" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient2)" />
+        <rect x="0" y="0" width="400" height="1080" fill="url(#accent-gradient2)" />
+        <!-- スライドタイトル -->
+        <rect x="100" y="100" width="520" height="80" rx="5" ry="5" fill="#4169E1" opacity="0.7" />
+        <text x="120" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">シリーズ概要</text>
+        <!-- コンテンツエリア -->
+        <g filter="url(#drop-shadow2)">
+          <!-- 期間と概要 -->
+          <rect x="550" y="220" width="1250" height="180" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="600" y="280" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#333">『ヱヴァンゲリヲン新劇場版』シリーズ (2007-2021)</text>
+          <text x="600" y="340" font-family="Arial, sans-serif" font-size="25" fill="#555">全4部作にわたるアニメ映画シリーズ</text>
+          <text x="600" y="380" font-family="Arial, sans-serif" font-size="25" fill="#555">1995年のTVアニメをリブート・再構築した作品</text>
+          <!-- シリーズ詳細 -->
+          <rect x="550" y="430" width="1250" height="280" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="600" y="490" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#333">シリーズの特徴</text>
+          <circle cx="580" cy="550" r="8" fill="#4169E1" />
+          <text x="620" y="560" font-family="Arial, sans-serif" font-size="25" fill="#555">「リビルド」—単なるリメイクではなく物語の再構築</text>
+          <circle cx="580" cy="610" r="8" fill="#4169E1" />
+          <text x="620" y="620" font-family="Arial, sans-serif" font-size="25" fill="#555">基本設定・キャラクターは同じだが、ストーリー展開は大きく異なる</text>
+          <circle cx="580" cy="670" r="8" fill="#4169E1" />
+          <text x="620" y="680" font-family="Arial, sans-serif" font-size="25" fill="#555">スタジオカラー設立による庵野秀明監督主導の制作体制</text>
+          <!-- 本考察のポイント -->
+          <rect x="550" y="740" width="1250" height="180" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="600" y="800" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#333">本考察のポイント</text>
+          <text x="620" y="860" font-family="Arial, sans-serif" font-size="25" fill="#555">• 旧作（TV版・旧劇場版）との比較</text>
+          <text x="620" y="900" font-family="Arial, sans-serif" font-size="25" fill="#555">• シリーズの魅力と歴史的意義の検証</text>
+        </g>
+        <!-- 左サイドの装飾 - 映画シリーズの年表 -->
+        <line x1="100" y1="220" x2="100" y2="920" stroke="#4169E1" stroke-width="3" opacity="0.7" />
+        <circle cx="100" cy="270" r="15" fill="#4169E1" opacity="0.8" />
+        <text x="160" y="280" font-family="Arial, sans-serif" font-size="22" fill="white">序 (2007)</text>
+        <circle cx="100" cy="370" r="15" fill="#4169E1" opacity="0.8" />
+        <text x="160" y="380" font-family="Arial, sans-serif" font-size="22" fill="white">破 (2009)</text>
+        <circle cx="100" cy="470" r="15" fill="#4169E1" opacity="0.8" />
+        <text x="160" y="480" font-family="Arial, sans-serif" font-size="22" fill="white">Q (2012)</text>
+        <circle cx="100" cy="570" r="15" fill="#4169E1" opacity="0.8" />
+        <text x="160" y="580" font-family="Arial, sans-serif" font-size="22" fill="white">シン (2021)</text>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">2/7</text>
+      </svg>
+    </div>
+
+    <!-- スライド3: 基本情報 -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="eva01-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#9370DB" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#9370DB" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="drop-shadow3" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient3)" />
+        <!-- 装飾要素 - 初号機イメージカラー -->
+        <rect x="0" y="0" width="1920" height="200" fill="url(#eva01-gradient)" />
+        <rect x="0" y="880" width="1920" height="200" fill="url(#eva01-gradient)" />
+        <!-- スライドタイトル -->
+        <rect x="100" y="100" width="800" height="80" rx="5" ry="5" fill="#9370DB" opacity="0.7" />
+        <text x="120" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">シン・エヴァンゲリオンシリーズの基本情報</text>
+        <!-- コンテンツエリア - 2列グリッド -->
+        <g filter="url(#drop-shadow3)">
+          <!-- 左列 - シリーズ基本情報 -->
+          <rect x="100" y="240" width="850" height="600" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="150" y="300" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#333">シリーズ構成</text>
+          <!-- テーブル -->
+          <rect x="150" y="330" width="750" height="50" fill="#9370DB" opacity="0.3" />
+          <rect x="150" y="380" width="750" height="50" fill="white" />
+          <rect x="150" y="430" width="750" height="50" fill="#9370DB" opacity="0.1" />
+          <rect x="150" y="480" width="750" height="50" fill="white" />
+          <rect x="150" y="530" width="750" height="50" fill="#9370DB" opacity="0.1" />
+          <rect x="150" y="580" width="750" height="50" fill="white" />
+          <!-- テーブルヘッダー -->
+          <text x="250" y="365" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">作品名</text>
+          <text x="500" y="365" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">公開年</text>
+          <text x="750" y="365" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">邦題</text>
+          <!-- テーブルデータ -->
+          <text x="250" y="415" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">ヱヴァンゲリヲン新劇場版:序</text>
+          <text x="500" y="415" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">2007年</text>
+          <text x="750" y="415" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">Evangelion: 1.0</text>
+          <text x="250" y="465" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">ヱヴァンゲリヲン新劇場版:破</text>
+          <text x="500" y="465" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">2009年</text>
+          <text x="750" y="465" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">Evangelion: 2.0</text>
+          <text x="250" y="515" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">ヱヴァンゲリヲン新劇場版:Q</text>
+          <text x="500" y="515" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">2012年</text>
+          <text x="750" y="515" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">Evangelion: 3.0</text>
+          <text x="250" y="565" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">シン・エヴァンゲリオン劇場版</text>
+          <text x="500" y="565" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">2021年</text>
+          <text x="750" y="565" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">Evangelion: 3.0+1.0</text>
+          <text x="150" y="650" font-family="Arial, sans-serif" font-size="20" fill="#555">※ Blu-ray/DVD版ではそれぞれ「1.11」「2.22」「3.33」「3.0+1.01」として発売</text>
+          <!-- 右列 - 旧作との関係性 -->
+          <rect x="970" y="240" width="850" height="600" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="1020" y="300" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#333">旧作との関係性</text>
+          <!-- 要点リスト -->
+          <circle cx="1040" cy="360" r="8" fill="#9370DB" />
+          <text x="1070" y="370" font-family="Arial, sans-serif" font-size="24" fill="#333">単なるリメイクではなく「リビルド」</text>
+          <text x="1070" y="410" font-family="Arial, sans-serif" font-size="22" fill="#555">新たな解釈と展開を加えた再構築作品</text>
+          <circle cx="1040" cy="460" r="8" fill="#9370DB" />
+          <text x="1070" y="470" font-family="Arial, sans-serif" font-size="24" fill="#333">スタッフ・声優の継続性</text>
+          <text x="1070" y="510" font-family="Arial, sans-serif" font-size="22" fill="#555">庵野秀明監督をはじめとする主要スタッフと声優陣は継続</text>
+          <circle cx="1040" cy="560" r="8" fill="#9370DB" />
+          <text x="1070" y="570" font-family="Arial, sans-serif" font-size="24" fill="#333">最新技術による映像表現の刷新</text>
+          <text x="1070" y="610" font-family="Arial, sans-serif" font-size="22" fill="#555">デジタル撮影技術や3DCGの導入で映像表現が飛躍的に向上</text>
+          <circle cx="1040" cy="660" r="8" fill="#9370DB" />
+          <text x="1070" y="670" font-family="Arial, sans-serif" font-size="24" fill="#333">新キャラクター・設定の追加</text>
+          <text x="1070" y="710" font-family="Arial, sans-serif" font-size="22" fill="#555">真希波・マリ・イラストリアスなど新たな要素の導入</text>
+        </g>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">3/7</text>
+      </svg>
+    </div>
+
+    <!-- スライド4: 旧作との比較 -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="eva02-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6347" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#FF6347" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="drop-shadow4" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient4)" />
+        <!-- 装飾要素 - 2号機イメージカラー -->
+        <rect x="1520" y="0" width="400" height="1080" fill="url(#eva02-gradient)" />
+        <!-- スライドタイトル -->
+        <rect x="100" y="100" width="500" height="80" rx="5" ry="5" fill="#FF6347" opacity="0.7" />
+        <text x="120" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">旧作との比較</text>
+        <!-- コンテンツエリア -->
+        <g filter="url(#drop-shadow4)">
+          <!-- 旧作と新劇場版の比較表 -->
+          <rect x="100" y="230" width="1700" height="700" rx="10" ry="10" fill="white" opacity="0.9" />
+          <!-- 表の見出し -->
+          <rect x="150" y="280" width="1600" height="60" fill="#FF6347" opacity="0.2" />
+          <text x="450" y="320" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">TV版・旧劇場版</text>
+          <text x="1250" y="320" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">新劇場版シリーズ</text>
+          <!-- 比較項目1: 物語展開 -->
+          <rect x="150" y="340" width="1600" height="50" fill="#FF6347" opacity="0.1" />
+          <text x="170" y="375" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">物語展開</text>
+          <text x="170" y="420" font-family="Arial, sans-serif" font-size="22" fill="#333">人類補完計画により全ての人間の心が</text>
+          <text x="170" y="455" font-family="Arial, sans-serif" font-size="22" fill="#333">一つになる結末。シンジとアスカのみ</text>
+          <text x="170" y="490" font-family="Arial, sans-serif" font-size="22" fill="#333">が荒廃した世界に残される。</text>
+          <text x="850" y="420" font-family="Arial, sans-serif" font-size="22" fill="#333">シンジ自らの選択でエヴァを消し去り、</text>
+          <text x="850" y="455" font-family="Arial, sans-serif" font-size="22" fill="#333">現実世界をやり直す結末。より前向きな</text>
+          <text x="850" y="490" font-family="Arial, sans-serif" font-size="22" fill="#333">未来を描く。</text>
+          <!-- 比較項目2: テーマ -->
+          <rect x="150" y="520" width="1600" height="50" fill="#FF6347" opacity="0.1" />
+          <text x="170" y="555" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">テーマ</text>
+          <text x="170" y="600" font-family="Arial, sans-serif" font-size="22" fill="#333">内省的・観念的なテーマが中心。</text>
+          <text x="170" y="635" font-family="Arial, sans-serif" font-size="22" fill="#333">葛藤や逃避の描写が強調される。</text>
+          <text x="850" y="600" font-family="Arial, sans-serif" font-size="22" fill="#333">自己責任や他者との和解がテーマ。</text>
+          <text x="850" y="635" font-family="Arial, sans-serif" font-size="22" fill="#333">希望と成長を強調した肯定的メッセージ。</text>
+          <!-- 比較項目3: 要素と演出 -->
+          <rect x="150" y="680" width="1600" height="50" fill="#FF6347" opacity="0.1" />
+          <text x="170" y="715" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">要素と演出</text>
+          <text x="170" y="760" font-family="Arial, sans-serif" font-size="22" fill="#333">1990年代の映像技術による制作。</text>
+          <text x="170" y="795" font-family="Arial, sans-serif" font-size="22" fill="#333">セル画とアナログ撮影が中心。</text>
+          <text x="170" y="830" font-family="Arial, sans-serif" font-size="22" fill="#333">限られた予算内での演出。</text>
+          <text x="850" y="760" font-family="Arial, sans-serif" font-size="22" fill="#333">デジタル技術と3DCGの導入。</text>
+          <text x="850" y="795" font-family="Arial, sans-serif" font-size="22" fill="#333">映像表現の大幅な向上とダイナミックな描写。</text>
+          <text x="850" y="830" font-family="Arial, sans-serif" font-size="22" fill="#333">マリなど新キャラクターの追加。</text>
+        </g>
+        <!-- シンジの成長の矢印 -->
+        <path d="M170,900 L1700,900" stroke="#FF6347" stroke-width="3" />
+        <path d="M1700,900 L1670,890 L1670,910 L1700,900" fill="#FF6347" />
+        <text x="300" y="940" font-family="Arial, sans-serif" font-size="24" fill="#333">受動的な存在</text>
+        <text x="1550" y="940" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#333">自ら未来を選択する存在</text>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">4/7</text>
+      </svg>
+    </div>
+
+    <!-- スライド5: シリーズの魅力 -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="eva08-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF69B4" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#FF69B4" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="drop-shadow5" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient5)" />
+        <!-- 装飾要素 - 8号機イメージカラー -->
+        <path d="M0,0 L1920,0 L1920,200 Q1700,250 1600,220 Q1450,180 1300,250 Q1100,350 900,300 Q700,250 500,350 Q300,450 150,400 Q50,350 0,300 Z" fill="url(#eva08-gradient)" opacity="0.8" />
+        <!-- スライドタイトル -->
+        <rect x="100" y="100" width="700" height="80" rx="5" ry="5" fill="#FF69B4" opacity="0.7" />
+        <text x="120" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">シン・エヴァンゲリオンシリーズの魅力</text>
+        <!-- コンテンツ - 3つのカード -->
+        <g filter="url(#drop-shadow5)">
+          <!-- 左カード - テーマとストーリー -->
+          <rect x="100" y="250" width="550" height="650" rx="10" ry="10" fill="white" opacity="0.9" />
+          <rect x="100" y="250" width="550" height="150" rx="10" ry="0" fill="#FF69B4" opacity="0.3" />
+          <text x="375" y="340" font-family="Arial, sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#333">深みのあるテーマとストーリー</text>
+          <!-- カードの内容 -->
+          <text x="130" y="430" font-family="Arial, sans-serif" font-size="22" fill="#333">• 「自己」と「他者」の関係性</text>
+          <text x="130" y="480" font-family="Arial, sans-serif" font-size="22" fill="#333">• 生きる意味という哲学的テーマ</text>
+          <text x="130" y="530" font-family="Arial, sans-serif" font-size="22" fill="#333">• 複雑で謎めいたストーリー展開</text>
+          <text x="130" y="580" font-family="Arial, sans-serif" font-size="22" fill="#333">• 多様な解釈を促す奥行きのある物語</text>
+          <text x="130" y="630" font-family="Arial, sans-serif" font-size="22" fill="#333">• 旧作からの進化した物語展開</text>
+          <text x="130" y="680" font-family="Arial, sans-serif" font-size="22" fill="#333">• 「リビルド」として新たな解釈を提示</text>
+          <text x="130" y="730" font-family="Arial, sans-serif" font-size="22" fill="#333">• 26年に及ぶ物語の集大成</text>
+          <!-- 中央カード - キャラクターの心理描写 -->
+          <rect x="685" y="250" width="550" height="650" rx="10" ry="10" fill="white" opacity="0.9" />
+          <rect x="685" y="250" width="550" height="150" rx="10" ry="0" fill="#FF69B4" opacity="0.3" />
+          <text x="960" y="340" font-family="Arial, sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#333">キャラクターの心理描写</text>
+          <!-- カードの内容 -->
+          <text x="715" y="430" font-family="Arial, sans-serif" font-size="22" fill="#333">• 繊細な感情表現と丁寧な描写</text>
+          <text x="715" y="480" font-family="Arial, sans-serif" font-size="22" fill="#333">• キャラクター同士の微妙な関係性</text>
+          <text x="715" y="530" font-family="Arial, sans-serif" font-size="22" fill="#333">• 静寂の中に漂う緊張感</text>
+          <text x="715" y="580" font-family="Arial, sans-serif" font-size="22" fill="#333">• 日本的な感情表現の演出</text>
+          <text x="715" y="630" font-family="Arial, sans-serif" font-size="22" fill="#333">• 深い共感を呼ぶリアルな心理描写</text>
+          <text x="715" y="680" font-family="Arial, sans-serif" font-size="22" fill="#333">• キャラクターの成長と変化</text>
+          <text x="715" y="730" font-family="Arial, sans-serif" font-size="22" fill="#333">• 葛藤から受容への心理的変遷</text>
+          <!-- 右カード - 映像美と音楽 -->
+          <rect x="1270" y="250" width="550" height="650" rx="10" ry="10" fill="white" opacity="0.9" />
+          <rect x="1270" y="250" width="550" height="150" rx="10" ry="0" fill="#FF69B4" opacity="0.3" />
+          <text x="1545" y="340" font-family="Arial, sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#333">映像美と音楽のインパクト</text>
+          <!-- カードの内容 -->
+          <text x="1300" y="430" font-family="Arial, sans-serif" font-size="22" fill="#333">• 最新技術による圧倒的な映像美</text>
+          <text x="1300" y="480" font-family="Arial, sans-serif" font-size="22" fill="#333">• 迫力満点の戦闘シーン</text>
+          <text x="1300" y="530" font-family="Arial, sans-serif" font-size="22" fill="#333">• 3DCGと2Dアニメの融合</text>
+          <text x="1300" y="580" font-family="Arial, sans-serif" font-size="22" fill="#333">• 鷺巣詩郎による荘厳な劇伴音楽</text>
+          <text x="1300" y="630" font-family="Arial, sans-serif" font-size="22" fill="#333">• 宇多田ヒカルの印象的な主題歌</text>
+          <text x="1300" y="680" font-family="Arial, sans-serif" font-size="22" fill="#333">• 音と映像の見事な融合</text>
+          <text x="1300" y="730" font-family="Arial, sans-serif" font-size="22" fill="#333">• 心に残る名シーンの数々</text>
+        </g>
+        <!-- サブタイトル -->
+        <text x="960" y="950" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">「物語」「キャラクター」「映像・音楽」の三位一体</text>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">5/7</text>
+      </svg>
+    </div>
+
+    <!-- スライド6: 歴史的意義 -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="mark06-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#191970" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#191970" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="drop-shadow6" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient6)" />
+        <!-- 装飾要素 - Mark.06イメージカラー -->
+        <rect x="0" y="0" width="400" height="1080" fill="url(#mark06-gradient)" />
+        <rect x="1520" y="0" width="400" height="1080" fill="url(#mark06-gradient)" />
+        <!-- スライドタイトル -->
+        <rect x="500" y="100" width="920" height="80" rx="5" ry="5" fill="#191970" opacity="0.7" />
+        <text x="540" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">シン・エヴァンゲリオンシリーズの歴史的意義</text>
+        <!-- コンテンツエリア -->
+        <g filter="url(#drop-shadow6)">
+          <!-- アニメ業界への影響 -->
+          <rect x="500" y="230" width="920" height="230" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="550" y="280" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333">アニメ業界への影響</text>
+          <circle cx="570" cy="330" r="8" fill="#191970" />
+          <text x="600" y="335" font-family="Arial, sans-serif" font-size="22" fill="#333">『シン・エヴァ』興行収入102億円超え - コロナ禍の中での大ヒット</text>
+          <circle cx="570" cy="380" r="8" fill="#191970" />
+          <text x="600" y="385" font-family="Arial, sans-serif" font-size="22" fill="#333">深夜テレビアニメ発の劇場版としては異例の成功</text>
+          <circle cx="570" cy="430" r="8" fill="#191970" />
+          <text x="600" y="435" font-family="Arial, sans-serif" font-size="22" fill="#333">製作委員会方式を採らないクリエイター主導の制作体制</text>
+          <!-- ファンの評価と文化的インパクト -->
+          <rect x="500" y="490" width="920" height="230" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="550" y="540" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333">ファンの評価と文化的インパクト</text>
+          <circle cx="570" cy="590" r="8" fill="#191970" />
+          <text x="600" y="595" font-family="Arial, sans-serif" font-size="22" fill="#333">2021年に日本で公開された映画の中で最多の観客動員数</text>
+          <circle cx="570" cy="640" r="8" fill="#191970" />
+          <text x="600" y="645" font-family="Arial, sans-serif" font-size="22" fill="#333">謎やメッセージについてインターネット上で熱心な議論</text>
+          <circle cx="570" cy="690" r="8" fill="#191970" />
+          <text x="600" y="695" font-family="Arial, sans-serif" font-size="22" fill="#333">社会現象的な盛り上がりとポップカルチャーへの多大な影響</text>
+          <!-- 庵野秀明監督の挑戦 -->
+          <rect x="500" y="750" width="920" height="230" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="550" y="800" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333">庵野秀明監督の挑戦</text>
+          <circle cx="570" cy="850" r="8" fill="#191970" />
+          <text x="600" y="855" font-family="Arial, sans-serif" font-size="22" fill="#333">総監督・脚本・原作・音響監督を兼任した全人的な挑戦</text>
+          <circle cx="570" cy="900" r="8" fill="#191970" />
+          <text x="600" y="905" font-family="Arial, sans-serif" font-size="22" fill="#333">制作中断を経て約9年の歳月をかけて完成させた集大成</text>
+          <circle cx="570" cy="950" r="8" fill="#191970" />
+          <text x="600" y="955" font-family="Arial, sans-serif" font-size="22" fill="#333">日本のアニメ史に残る記念碑的な仕事</text>
+        </g>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">6/7</text>
+      </svg>
+    </div>
+
+    <!-- スライド7: まとめ -->
+    <div class="slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="bg-gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e9ecef" />
+            <stop offset="100%" stop-color="#d8e2f3" />
+          </linearGradient>
+          <linearGradient id="multi-eva-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#9370DB" stop-opacity="0.3" />
+            <stop offset="25%" stop-color="#4169E1" stop-opacity="0.3" />
+            <stop offset="50%" stop-color="#FF6347" stop-opacity="0.3" />
+            <stop offset="75%" stop-color="#FF69B4" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#191970" stop-opacity="0.3" />
+          </linearGradient>
+          <filter id="drop-shadow7" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="15" />
+            <feOffset dx="0" dy="10" result="offsetblur" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- メインの背景 -->
+        <rect width="1920" height="1080" fill="url(#bg-gradient7)" />
+        <!-- 装飾要素 - すべてのエヴァをイメージしたグラデーション -->
+        <path d="M0,0 L1920,0 L1920,200 Q1700,250 1600,220 Q1450,180 1300,250 Q1100,350 900,300 Q700,250 500,350 Q300,450 150,400 Q50,350 0,300 Z" fill="url(#multi-eva-gradient)" opacity="0.8" />
+        <path d="M1920,1080 L0,1080 L0,880 Q220,830 320,860 Q470,900 620,830 Q820,730 1020,780 Q1220,830 1420,730 Q1620,630 1770,680 Q1870,730 1920,780 Z" fill="url(#multi-eva-gradient)" opacity="0.8" />
+        <!-- スライドタイトル -->
+        <rect x="100" y="100" width="450" height="80" rx="5" ry="5" fill="#333" opacity="0.7" />
+        <text x="120" y="155" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">まとめ</text>
+        <!-- メインコンテンツ -->
+        <g filter="url(#drop-shadow7)">
+          <!-- シリーズの総評 -->
+          <rect x="100" y="230" width="900" height="350" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="150" y="290" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#333">シリーズの総評</text>
+          <line x1="150" y1="320" x2="850" y2="320" stroke="#333" stroke-width="2" />
+          <text x="150" y="360" font-family="Arial, sans-serif" font-size="24" fill="#333">• 旧来のエヴァに新解釈と決着を与えた集大成</text>
+          <text x="150" y="420" font-family="Arial, sans-serif" font-size="24" fill="#333">• 長年のファンの期待に応える感動的な完結編</text>
+          <text x="150" y="480" font-family="Arial, sans-serif" font-size="24" fill="#333">• 複雑な謎とキャラクターの関係性に決着</text>
+          <text x="150" y="540" font-family="Arial, sans-serif" font-size="24" fill="#333">• 壮大なスケールと感情的カタルシスの両立</text>
+          <!-- エヴァンゲリオンの未来 -->
+          <rect x="100" y="610" width="900" height="350" rx="10" ry="10" fill="white" opacity="0.9" />
+          <text x="150" y="670" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#333">エヴァンゲリオンの未来</text>
+          <line x1="150" y1="700" x2="850" y2="700" stroke="#333" stroke-width="2" />
+          <text x="150" y="750" font-family="Arial, sans-serif" font-size="24" fill="#333">• 「さようなら、全てのエヴァンゲリオン。」</text>
+          <text x="150" y="810" font-family="Arial, sans-serif" font-size="24" fill="#333">• 26年にわたる物語の決定的な締めくくり</text>
+          <text x="150" y="870" font-family="Arial, sans-serif" font-size="24" fill="#333">• 革新的表現とテーマの永続的影響</text>
+          <text x="150" y="930" font-family="Arial, sans-serif" font-size="24" fill="#333">• 日本アニメ史に残る伝説的作品</text>
+          <!-- 右側のキービジュアル風イメージ -->
+          <rect x="1050" y="230" width="750" height="730" rx="10" ry="10" fill="white" opacity="0.9" />
+          <!-- 引用 -->
+          <text x="1425" y="350" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="italic" text-anchor="middle" fill="#333">「物語はいつか終わる</text>
+          <text x="1425" y="400" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="italic" text-anchor="middle" fill="#333">だが、それは裏切りではない</text>
+          <text x="1425" y="450" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="italic" text-anchor="middle" fill="#333">それが物語というものだ」</text>
+          <!-- シンプルなエヴァイメージ -->
+          <path d="M1200,550 L1325,500 L1550,500 L1675,550 L1675,750 L1550,850 L1325,850 L1200,750 Z" fill="none" stroke="#9370DB" stroke-width="3" />
+          <path d="M1250,600 L1350,550 L1525,550 L1625,600 L1625,700 L1525,800 L1350,800 L1250,700 Z" fill="none" stroke="#FF6347" stroke-width="3" />
+          <circle cx="1425" cy="650" r="100" fill="none" stroke="#4169E1" stroke-width="3" />
+          <circle cx="1425" cy="650" r="50" fill="none" stroke="#FF69B4" stroke-width="3" />
+          <!-- 2021 - 完 -->
+          <text x="1425" y="850" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#333">2021 - 完</text>
+        </g>
+        <!-- フッター -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#333" opacity="0.1" />
+        <text x="1800" y="1050" font-family="Arial, sans-serif" font-size="20" text-anchor="end" fill="#555">7/7</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <button id="prev-btn">前へ</button>
+    <button id="next-btn">次へ</button>
+  </div>
+
+  <div class="counter">
+    <span id="current">1</span> / 7
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const currentSlideDisplay = document.getElementById('current');
+    let currentSlide = 0;
+
+    // 初期表示
+    updateDisplay();
+
+    // 前へボタン
+    prevBtn.addEventListener('click', function() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateDisplay();
+    });
+
+    // 次へボタン
+    nextBtn.addEventListener('click', function() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateDisplay();
+    });
+
+    // キーボード操作
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateDisplay();
+      } else if (e.key === 'ArrowRight') {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateDisplay();
+      }
+    });
+
+    // タッチスワイプ対応
+    let touchStartX = 0;
+    document.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    document.addEventListener('touchend', function(e) {
+      const touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (diff > 50) { // 右から左へスワイプ（次へ）
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateDisplay();
+      } else if (diff < -50) { // 左から右へスワイプ（前へ）
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateDisplay();
+      }
+    });
+
+    // 表示の更新
+    function updateDisplay() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[currentSlide].classList.add('active');
+      currentSlideDisplay.textContent = currentSlide + 1;
+    }
+  </script>
+</body>
+</html>
